@@ -86,8 +86,6 @@ export const Feedback = () => (
     <Caption style={CaptionStyle} offset={allTrials[17].offset} charttype = {allTrials[17].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[18].offset} charttype = {allTrials[18].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[19].offset} charttype = {allTrials[19].charttype}></Caption>
-
-
 </div>
 )
 
