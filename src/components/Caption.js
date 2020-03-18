@@ -36,7 +36,7 @@ class Caption extends Component {
           <img src={img_src} className="figure-img img-fluid rounded"
             width="20px"
             height="20px"/>
-          <p>{offset}%&nbsp;</p>
+          <p>&nbsp;{offset}%&nbsp;</p>
         </figure>
     }
 }
