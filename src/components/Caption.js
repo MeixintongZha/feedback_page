@@ -32,11 +32,11 @@ class Caption extends Component {
         else {
             console.log("Error: chart_icon load")
         }
-        return <figure className="figure">
+        return <figure className="figure" marginRight="50">
           <img src={img_src} className="figure-img img-fluid rounded"
             width="20px"
             height="20px"/>
-          <figcaption fontSize="100px" className="figure-caption text-lg-center">{offset}</figcaption>
+          <p>{offset}%&nbsp;</p>
         </figure>
     }
 }
