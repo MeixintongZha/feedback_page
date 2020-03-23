@@ -3,6 +3,8 @@ import { Badge } from 'react-bootstrap';
 
 import PropTypes from 'prop-types'
 import Caption from './components/Caption'
+import Donut from './components/Donut'
+import Confidence from './components/Confidence'
 
 //chartSwitcher(cmQuestion) {
 //    const { offset, charttype } = cmQuestion;
@@ -52,6 +54,15 @@ allTrials.push(trial18);
 allTrials.push(trial19);
 allTrials.push(trial20);
 
+    var mainStyle = {
+      margin: 20,
+    };
+
+    var donutStyle = {
+      display: "flex",
+      margin: 20,
+      padding: 10,
+    };
     var letterStyle = {
       paddingRight: 50,
       backgroundColor: "#ffde00",
@@ -64,7 +75,11 @@ allTrials.push(trial20);
     var CaptionStyle = {
       paddingRight:50
     };
+    var correct = 3;
+    var sum = 5;
+    var type1='bubblechart';
 export const Feedback = () => (
+<div style={mainStyle}>
 <div style={letterStyle}>
     <Caption style={CaptionStyle} offset={allTrials[0].offset} charttype = {allTrials[0].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[1].offset} charttype = {allTrials[1].charttype}></Caption>
@@ -86,6 +101,16 @@ export const Feedback = () => (
     <Caption style={CaptionStyle} offset={allTrials[17].offset} charttype = {allTrials[17].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[18].offset} charttype = {allTrials[18].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[19].offset} charttype = {allTrials[19].charttype}></Caption>
+</div>
+<div>
+    <Confidence style = {mainStyle} data={allTrials}></Confidence>
+</div>
+<div style={donutStyle}>
+    <Donut correct={correct} total={sum} charttype={type1}></Donut>
+    <Donut correct={correct} total={sum} charttype={type1}></Donut>
+    <Donut correct={correct} total={sum} charttype={type1}></Donut>
+    <Donut correct={correct} total={sum} charttype={type1}></Donut>
+</div>
 </div>
 )
 
