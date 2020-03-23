@@ -89,7 +89,6 @@ function switchDonut(data, type) {
 
 export const Feedback = () => (
 <div align="center" style={mainStyle}>
-
 <div align="center">
     <Caption style={CaptionStyle} offset={allTrials[0].offset} charttype = {allTrials[0].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[1].offset} charttype = {allTrials[1].charttype}></Caption>
