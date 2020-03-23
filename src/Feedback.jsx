@@ -55,7 +55,7 @@ allTrials.push(trial19);
 allTrials.push(trial20);
 
     var mainStyle = {
-      margin: 20,
+      margin: 30
     };
 
     var donutStyle = {
@@ -63,15 +63,15 @@ allTrials.push(trial20);
       margin: 20,
       padding: 10,
     };
-    var letterStyle = {
-      paddingRight: 50,
-      backgroundColor: "#ffde00",
-      color: "#333",
-      display: "inline-block",
-      fontFamily: "monospace",
-      fontSize: 20,
-      textAlign: "center"
-    };
+//    var letterStyle = {
+//      paddingRight: 50,
+//      backgroundColor: "#ffde00",
+////      color: "#F01122",
+//      display: "inline-block",
+//      fontFamily: "monospace",
+//      fontSize: 20,
+//      textAlign: "center"
+//    };
     var CaptionStyle = {
       paddingRight:50
     };
@@ -79,8 +79,9 @@ allTrials.push(trial20);
     var sum = 5;
     var type1='bubblechart';
 export const Feedback = () => (
-<div style={mainStyle}>
-<div style={letterStyle}>
+<div align="center" style={mainStyle}>
+
+<div align="center">
     <Caption style={CaptionStyle} offset={allTrials[0].offset} charttype = {allTrials[0].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[1].offset} charttype = {allTrials[1].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[2].offset} charttype = {allTrials[2].charttype}></Caption>
@@ -102,15 +103,19 @@ export const Feedback = () => (
     <Caption style={CaptionStyle} offset={allTrials[18].offset} charttype = {allTrials[18].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[19].offset} charttype = {allTrials[19].charttype}></Caption>
 </div>
-<div>
-    <Confidence style = {mainStyle} data={allTrials}></Confidence>
+
+<div style = {mainStyle} align="center">
+    <Confidence data={allTrials}></Confidence>
 </div>
-<div style={donutStyle}>
+
+
+<div align="center" style={donutStyle}>
     <Donut correct={correct} total={sum} charttype={type1}></Donut>
     <Donut correct={correct} total={sum} charttype={type1}></Donut>
     <Donut correct={correct} total={sum} charttype={type1}></Donut>
     <Donut correct={correct} total={sum} charttype={type1}></Donut>
 </div>
+
 </div>
 )
 

@@ -17,7 +17,6 @@
     "d3-svg-legend": "^2.25.6",
     "d3-transition": "^1.3.2",
     "mctad": "0.0.1",
-    "mctad.js": "file:mctad",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-chartjs-2": "^2.9.0",
