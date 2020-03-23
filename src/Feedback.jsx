@@ -59,25 +59,34 @@ allTrials.push(trial20);
     };
 
     var donutStyle = {
+      alignItems: "center",
+      justifyContent: "center",
       display: "flex",
       margin: 20,
       padding: 10,
     };
-//    var letterStyle = {
-//      paddingRight: 50,
-//      backgroundColor: "#ffde00",
-////      color: "#F01122",
-//      display: "inline-block",
-//      fontFamily: "monospace",
-//      fontSize: 20,
-//      textAlign: "center"
-//    };
+
     var CaptionStyle = {
       paddingRight:50
     };
-    var correct = 3;
-    var sum = 5;
+    var numTrial = 5; //number of trials of one type
     var type1='bubblechart';
+
+function switchDonut(data, type) {
+    var ret = [];
+    var count= 0;
+    var correct = 0
+    for(var i = 0; i<data.length; i++) {
+        if(data[i].charttype === type) {
+            ret.push(data[i].offset);
+            count = count + 1;
+            if (data[i].offset>=-5 &&data[i].offset<=5) {
+            correct = correct + 1;}
+        }
+    }
+    return correct;
+}
+
 export const Feedback = () => (
 <div align="center" style={mainStyle}>
 
@@ -110,10 +119,10 @@ export const Feedback = () => (
 
 
 <div align="center" style={donutStyle}>
-    <Donut correct={correct} total={sum} charttype={type1}></Donut>
-    <Donut correct={correct} total={sum} charttype={type1}></Donut>
-    <Donut correct={correct} total={sum} charttype={type1}></Donut>
-    <Donut correct={correct} total={sum} charttype={type1}></Donut>
+    <Donut correct={switchDonut(allTrials,"barchart")} total={numTrial} charttype="barchart"></Donut>
+    <Donut correct={switchDonut(allTrials,"bubblechart")} total={numTrial} charttype={"bubblechart"}></Donut>
+    <Donut correct={switchDonut(allTrials,"piechart")} total={numTrial} charttype={"piechart"}></Donut>
+    <Donut correct={switchDonut(allTrials,"stackbarchart")} total={numTrial} charttype={"stackbarchart"}></Donut>
 </div>
 
 </div>
