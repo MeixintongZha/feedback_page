@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+![Feedback Page Example](./src/res/feedback_layout.png)
 
 ## Available Scripts
 
