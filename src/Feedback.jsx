@@ -55,7 +55,7 @@ allTrials.push(trial19);
 allTrials.push(trial20);
 
     var mainStyle = {
-      margin: 30
+      margin: 10
     };
 
     var donutStyle = {
@@ -124,7 +124,12 @@ export const Feedback = () => (
     <Donut correct={switchDonut(allTrials,"piechart")} total={numTrial} charttype={"piechart"}></Donut>
     <Donut correct={switchDonut(allTrials,"stackbarchart")} total={numTrial} charttype={"stackbarchart"}></Donut>
 </div>
+<div>
+<p>Hurray, you did a good job!</p>
+<p>Now, try hitting 80% correct on all graph types. This will consolidate your data visual literacy skills.</p>
 
+
+</div>
 </div>
 )
 
