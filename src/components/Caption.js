@@ -4,19 +4,20 @@ import React, { Component } from 'react'
 
 //import { hierarchy, treemap } from 'd3-hierarchy';
 import bar_icon from '../res/barchart_icon.png';
-import bubble_icon from '../res/bubblechart_icon.png';
+import bubble_icon from '../res/bubble_icon.png';
 import pie_icon from '../res/piechart_icon.png';
 import stack_icon from '../res/stackedbar_icon.png';
 import checkmark from '../res/correct.png';
 import crossmark from '../res/incorrect.png';
+import o_mark from '../res/yellow_o.png';
 
 
 function colorSwitch(val) {
     var d = val;
-    if(d>=-100 && d<-40){
+    if(d<=-60){
         return "#581845";
     }
-    else if(d>=-40 && d<-20){
+    else if(d>-60 && d<-20){
         return "#F01122";
     }
     else if(d>=-20 && d<-5){
@@ -34,7 +35,7 @@ function colorSwitch(val) {
     else if(d>=20 && d<60){
         return "#F01122";
     }
-    else if(d>=60 && d<=100){
+    else if(d>=60){
         return "#581845";
     }
    else {
@@ -82,7 +83,13 @@ class Caption extends Component {
         if(value >= -5 && value <= 5) {
             isCorrect = checkmark;
         }
-        else if(value<-5 || value >5){
+        else if(value < -5 && value > -20) {
+            isCorrect = o_mark;
+        }
+        else if(value > 5 && value < 20) {
+            isCorrect = o_mark;
+        }
+        else if(value<=-20 || value >= 20){
             isCorrect = crossmark;
         }
         else {
@@ -91,13 +98,13 @@ class Caption extends Component {
 
         return <figure style = {letterStyle} className="figure" marginRight="50">
           <img src={img_src} className="figure-img img-fluid rounded"
-            width="20px"
-            height="20px"/>
+            width="35px"
+            height="35px"/>
 
           <p color={textColor}>&nbsp;{offset}%&nbsp;</p>
-          <img src={isCorrect} className="figure-img img-fluid rounded"
-            width="20px"
-            height="20px"/>
+        <img src={isCorrect} className="figure-img img-fluid"
+            width="15px"
+            height="15px"/>
         </figure>
     }
 }

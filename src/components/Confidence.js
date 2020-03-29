@@ -181,25 +181,30 @@ class Confidence extends Component {
         for (var i = 0; i < data.length; i++) {
             offsets.push(parseInt(data[i].offset));
         }
-        var offsets_count = [0,0,0,0,0,0,0,0];
+        var offsets_count = [0,0,0,0,0,0,0,0,0];
         for (var i = 0; i < offsets.length; i++) {
-            var d = offsets[i]
-            if(d>=-100 && d<-60){
-            offsets_count[0] = offsets_count[0] + 1;}
-            else if(d>=-60 && d<-20){
+            var d = offsets[i];
+            console.log(d);
+            console.log(offsets_count);
+            if(d<=-60){
+            offsets_count[0] = offsets_count[0] + 1;
+            }
+            if(d>-60 && d<-20){
             offsets_count[1] = offsets_count[1] + 1;}
-            else if(d>=-20 && d<-5){
+            if(d>=-20 && d<-5){
             offsets_count[2] = offsets_count[2] + 1;}
-            else if(d>=-5 && d<0){
+            if(d>=-5 && d<0){
             offsets_count[3] = offsets_count[3] + 1;}
-            else if(d>=0 && d<5){
+            if (d===0) {
             offsets_count[4] = offsets_count[4] + 1;}
-            else if(d>=5 && d<20){
+            if(d>0 && d<=5){
             offsets_count[5] = offsets_count[5] + 1;}
-            else if(d>=20 && d<60){
+            if(d>5 && d<=20){
             offsets_count[6] = offsets_count[6] + 1;}
-            else if(d>=60 && d<=100){
+            if(d>20 && d<60){
             offsets_count[7] = offsets_count[7] + 1;}
+            if(d>=60){
+            offsets_count[8] = offsets_count[8] + 1;}
             else {
             console.log("offsets error");}
 
@@ -217,7 +222,8 @@ class Confidence extends Component {
           datasets: [
             {
               label: 'Rainfall',
-              backgroundColor: 'rgba(75,192,192,1)',
+              //backgroundColor: ['rgba(75,192,192,1)'],
+              backgroundColor: ["#581845","#F01122","#FCCF04","#4CFC04","#4CFC04","#4CFC04","#FCCF04","#F01122","#581845"],
               borderColor: 'rgba(0,0,0,1)',
               borderWidth: 1,
               data: offsets_count
