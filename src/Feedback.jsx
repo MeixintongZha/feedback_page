@@ -73,18 +73,45 @@ allTrials.push(trial20);
     var type1='bubblechart';
 
 function switchDonut(data, type) {
-    var ret = [];
     var count= 0;
-    var correct = 0
+    var correct = 0;
+    var okay = 0;
+    var incorrect = 0;
+    var toobad = 0;
+
     for(var i = 0; i<data.length; i++) {
         if(data[i].charttype === type) {
-            ret.push(data[i].offset);
             count = count + 1;
             if (data[i].offset>=-5 &&data[i].offset<=5) {
             correct = correct + 1;}
+            if (data[i].offset>=-5 &&data[i].offset<=5) {
+            correct = correct + 1;}
+
+            if(data[i].offset<=-60){
+            toobad = toobad + 1;
+            }
+            if(data[i].offset>-60 && data[i].offset<-20){
+            incorrect = incorrect + 1;}
+            if(data[i].offset>=-20 && data[i].offset<-5){
+            okay = okay + 1;}
+            if(data[i].offset>=-5 && data[i].offset<0){
+            correct = correct + 1;}
+            if (data[i].offset===0) {
+            correct = correct + 1;}
+            if(data[i].offset>0 && data[i].offset<=5){
+            correct = correct + 1;}
+            if(data[i].offset>5 && data[i].offset<=20){
+            okay = okay + 1;}
+            if(data[i].offset>20 && data[i].offset<60){
+            incorrect = incorrect + 1;}
+            if(data[i].offset>=60){
+            toobad = toobad + 1;}
+            else {
+            console.log("donut input error");
+            }
         }
     }
-    return correct;
+    return [correct,okay,incorrect,toobad];
 }
 
 export const Feedback = () => (
