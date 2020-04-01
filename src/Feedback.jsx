@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge, Button } from 'react-bootstrap';
 
 import PropTypes from 'prop-types'
 import Caption from './components/Caption'
@@ -116,6 +116,12 @@ function switchDonut(data, type) {
 
 export const Feedback = () => (
 <div align="center" style={mainStyle}>
+<div>
+<p>Congratulations! You have now completed 2 trials. </p>
+
+<p>At this point, you can choose to continue practicing your chart-reading
+skills by clicking “More Trials”, or click “I’m Finished” to go to the final page.</p>
+</div>
 <div align="center">
     <Caption style={CaptionStyle} offset={allTrials[0].offset} charttype = {allTrials[0].charttype}></Caption>
     <Caption style={CaptionStyle} offset={allTrials[1].offset} charttype = {allTrials[1].charttype}></Caption>
@@ -154,8 +160,9 @@ export const Feedback = () => (
 <p>Hurray, you did a good job!</p>
 <p>Now, try hitting 80% correct on all graph types. This will consolidate your data visual literacy skills.</p>
 
-
 </div>
+<Button variant="success">Next</Button>{' '}
+<Button variant="outline-danger">Quit</Button>{' '}
 </div>
 )
 

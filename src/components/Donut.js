@@ -32,16 +32,24 @@ render() {
 	datasets: [{
 		data: [correct_v, okay_v, incorrect_v, toobad_v],
 		backgroundColor: [
-		"#4CFC04",
-		"#FCCF04",
-		"#F01122",
-		"#581845"
+//		"#4CFC04",
+//		"#FCCF04",
+//		"#F01122",
+//		"#581845"
+        "#31e15b",
+        "#f47d4a",
+        "#ff3c5c",
+        "#662225"
 		],
 		hoverBackgroundColor: [
-		"#4CFC04",
-		"#FCCF04",
-		"#F01122",
-		"#581845"
+//		"#4CFC04",
+//		"#FCCF04",
+//		"#F01122",
+//		"#581845"
+        "#31e15b",
+        "#f47d4a",
+        "#ff3c5c",
+        "#662225"
 		]
 	}]
 };

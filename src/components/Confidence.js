@@ -223,7 +223,17 @@ class Confidence extends Component {
             {
               label: 'Rainfall',
               //backgroundColor: ['rgba(75,192,192,1)'],
-              backgroundColor: ["#581845","#F01122","#FCCF04","#4CFC04","#4CFC04","#4CFC04","#FCCF04","#F01122","#581845"],
+              backgroundColor: [
+                "#662225",
+                "#ff3c5c",
+                "#f47d4a",
+                "#31e15b",
+                "#31e15b",
+                "#31e15b",
+                "#f47d4a",
+                "#ff3c5c",
+                "#662225"
+              ],
               borderColor: 'rgba(0,0,0,1)',
               borderWidth: 1,
               data: offsets_count
@@ -233,8 +243,8 @@ class Confidence extends Component {
         return <div className="col-md-4">
           <Bar
           data={state}
-          width={100}
-            height={50}
+          width={20}
+          height={10}
           options={{
             title:{
               display:true,

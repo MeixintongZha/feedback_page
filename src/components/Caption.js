@@ -6,37 +6,37 @@ import React, { Component } from 'react'
 import bar_icon from '../res/barchart_icon.png';
 import bubble_icon from '../res/bubble_icon.png';
 import pie_icon from '../res/piechart_icon.png';
-import stack_icon from '../res/stackedbar_icon.png';
+import stack_icon from '../res/stackbar_icon.png';
 import checkmark from '../res/correct.png';
 import crossmark from '../res/incorrect.png';
-import o_mark from '../res/yellow_o.png';
+import o_mark from '../res/orange_o.png';
 
 
 function colorSwitch(val) {
     var d = val;
     if(d<=-60){
-        return "#581845";
+        return "#662225";
     }
     else if(d>-60 && d<-20){
-        return "#F01122";
+        return "#ff3c5c";
     }
     else if(d>=-20 && d<-5){
-        return "#FCCF04";
+        return "#f47d4a";
     }
     else if(d>=-5 && d<0){
-        return "#4CFC04";
+        return "#31e15b";
     }
     else if(d>=0 && d<=5){
-        return "#4CFC04";
+        return "#31e15b";
     }
     else if(d>5 && d<20){
-        return "#FCCF04";
+        return "#f47d4a";
     }
     else if(d>=20 && d<60){
-        return "#F01122";
+        return "#ff3c5c";
     }
     else if(d>=60){
-        return "#581845";
+        return "#662225";
     }
    else {
     console.log("offsets error");}
